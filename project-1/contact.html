@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Sweat Books</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Sweat Books</h1>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html">Photo Gallery</a></li>
+          <li>
+            <a href="products.html">Products</a>
+          </li>
+          <li><a href="contact.html" class="section-selected">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+    <div id="contact-content">
+      <h2>Contact Us</h2>
+      <form method="post" action="https://hnitest.go.yj.fr">
+        <h3>Last Name</h3>
+        <input class="contact-form" id="lastname" type="text" name="lastname" />
+        <h3>First Name</h3>
+        <input
+          class="contact-form"
+          id="firstname"
+          type="text"
+          name="firstname"
+        />
+        <h3>Mail</h3>
+        <input
+          class="contact-form"
+          id="mail"
+          type="email"
+          name="mail"
+          placeholder="yourmail@yahoo.com"
+        />
+        <h3>Request</h3>
+        <textarea
+          class="contact-form"
+          name="request"
+          id="request"
+          cols="66"
+          rows="10"
+        ></textarea>
+        <h3>Country</h3>
+        <select class="contact-form" name="country" id="country">
+          <option value="France">France</option>
+          <option value="Belgique">Belgique</option>
+          <option value="Suisse">Suisse</option>
+        </select>
+        <br />
+        <input type="reset" />
+        <input type="submit" />
+      </form>
+    </div>
+    <footer>
+      <p class="footer">&copy; 2026 Sweat Books</p>
+    </footer>
+  </body>
+</html>
