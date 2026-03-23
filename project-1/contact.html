@@ -10,53 +10,113 @@
       <div class="nav">
         <ul class="nav">
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li>
+            <a href="about.html">About</a>
+            <ul class="hidden-nav">
+              <li><a href="staff.html">Staff</a></li>
+            </ul>
+          </li>
           <li><a href="gallery.html">Photo Gallery</a></li>
           <li>
             <a href="products.html">Products</a>
+            <ul class="hidden-nav">
+              <li><a href="fabrics.html">Fabrics</a></li>
+            </ul>
           </li>
           <li><a href="contact.html" class="section-selected">Contact</a></li>
         </ul>
       </div>
     </header>
     <div id="contact-content">
-      <h2>Contact Us</h2>
-      <form method="post" action="https://hnitest.go.yj.fr">
-        <h3>Last Name</h3>
-        <input class="contact-form" id="lastname" type="text" name="lastname" />
-        <h3>First Name</h3>
-        <input
-          class="contact-form"
-          id="firstname"
-          type="text"
-          name="firstname"
-        />
-        <h3>Mail</h3>
-        <input
-          class="contact-form"
-          id="mail"
-          type="email"
-          name="mail"
-          placeholder="yourmail@yahoo.com"
-        />
-        <h3>Request</h3>
-        <textarea
-          class="contact-form"
-          name="request"
-          id="request"
-          cols="66"
-          rows="10"
-        ></textarea>
-        <h3>Country</h3>
-        <select class="contact-form" name="country" id="country">
-          <option value="France">France</option>
-          <option value="Belgique">Belgique</option>
-          <option value="Suisse">Suisse</option>
-        </select>
-        <br />
-        <input type="reset" />
-        <input type="submit" />
-      </form>
+      <div class="centered">
+        <h2>Contact Us</h2>
+        <form method="post" action="https://hnitest.go.yj.fr">
+          <table>
+            <tr>
+              <td>
+                <label>
+                  <h3>Last Name</h3>
+                  <input
+                    class="contact-form"
+                    id="lastname"
+                    type="text"
+                    name="lastname"
+                    required="true"
+                    placeholder="Your last name"
+                  />
+                </label>
+              </td>
+              <td>
+                <label>
+                  <h3>First Name</h3>
+                  <input
+                    class="contact-form"
+                    id="firstname"
+                    type="text"
+                    name="firstname"
+                    required="true"
+                    placeholder="Your first name"
+                  />
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <label>
+                  <h3>Mail</h3>
+                  <input
+                    class="contact-form"
+                    id="mail"
+                    type="email"
+                    name="mail"
+                    placeholder="yourmail@yahoo.com"
+                    required="true"
+                  />
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <label>
+                  <h3>Request</h3>
+                  <textarea
+                    class="contact-form"
+                    name="request"
+                    id="request"
+                    cols="66"
+                    rows="10"
+                    required="true"
+                    placeholder="Your message : your question, your request for a custom-made book cover, etc."
+                  ></textarea>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <label>
+                  <h3>Country</h3>
+                  <select
+                    class="contact-form"
+                    name="country"
+                    id="country"
+                    required="true"
+                  >
+                    <option value="France" selected="true">France</option>
+                    <option value="Belgique">Belgique</option>
+                    <option value="Suisse">Suisse</option>
+                  </select>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="reset" />
+              </td>
+              <td><input type="submit" /></td>
+            </tr>
+          </table>
+        </form>
+      </div>
     </div>
     <footer>
       <p class="footer">&copy; 2026 Sweat Books</p>
