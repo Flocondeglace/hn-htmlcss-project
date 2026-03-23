@@ -11,6 +11,11 @@ h1 {
   color: #41431b;
   text-align: center;
   font-family: cursive;
+  transition: all 1.5s ease-in;
+}
+
+h1:hover {
+  transform: scale(2);
 }
 
 a {
@@ -126,6 +131,12 @@ ul.hidden-nav {
   display: block;
 }
 
+li:hover {
+  transform: scale(1.02);
+  background-color: #e3dbbb;
+  box-shadow: 2px 2px 2px #aeb784;
+}
+
 /* Footer */
 p.footer {
   text-align: center;
@@ -147,6 +158,25 @@ p.footer {
 }
 
 /* About */
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  border: dashed 2px #aeb784;
+  border-radius: 5px;
+}
+
+.person img:hover {
+  transform: none;
+}
+
+.person:hover {
+  transform: scale(1.02);
+  background-color: #e3dbbb;
+  box-shadow: 4px 4px 4px #aeb784;
+}
 
 /* Gallery */
 
@@ -176,6 +206,9 @@ p.footer {
 .carousel-slider a:hover {
   background-color: #aeb784;
   font-weight: bold;
+
+  transform: scale(1.02);
+  box-shadow: 1px 1px 1px #aeb784;
 }
 
 .carousel-slider a:active {
