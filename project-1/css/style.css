@@ -76,7 +76,6 @@ div.centered-list img {
 
 .selected {
   font-weight: bold;
-  color: blue;
 }
 /* Header */
 
@@ -160,7 +159,7 @@ p.footer {
 
 #gallery-content .in-line-list {
   width: 220px;
-  scrollbar-width: none;
+  overflow-x: hidden;
 }
 
 .carousel-slider a {
