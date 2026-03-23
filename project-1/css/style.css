@@ -26,8 +26,20 @@ div.centered {
 }
 
 #home-content img {
+  margin: 1em;
   max-width: 430px;
-  transform: rotate(90);
+  animation: emph 2s ease-in alternate infinite;
+}
+
+@keyframes emph {
+  from {
+    transform: rotate(-5deg);
+    scale: 1.05;
+  }
+  to {
+    transform: rotate(5deg);
+    scale: 0.95;
+  }
 }
 
 #gallery-content img {
