@@ -8,24 +8,66 @@ body {
   border-radius: 12px;
 }
 
+hr {
+  border: dashed 1px #aeb784;
+  margin: 3em;
+}
+
+/* ==================== Reusable styles ==================== */
+
+/* ========== Text styles ========== */
+h1,
+h2 {
+  font-family: cursive;
+}
+
+h3,
+a,
+p {
+  font-family: ui-rounded;
+}
+
+h1 {
+  color: #41431b;
+  text-align: center;
+  transition: all 1.5s ease-out;
+  width: 250px;
+  padding: 0;
+  margin: 0;
+}
+
+h1:hover {
+  transform: scale(1.3);
+}
+
 h2 {
   text-align: center;
 }
 
 h3 {
   padding: 0;
-  margin: 0;
-}
-
-hr {
-  border: dashed 1px #aeb784;
-  margin: 3em;
+  margin: 0.3em 0em;
 }
 
 a {
   color: #41431b;
 }
 
+p.center {
+  text-align: center;
+}
+
+b.emphasize {
+  color: #1c1d0c;
+  font-size: 1.2em;
+}
+
+.selected {
+  font-weight: bold;
+  background-color: #aeb784;
+}
+
+/* ========== Table styles ========== */
 table {
   border-collapse: collapse;
   text-align: center;
@@ -47,58 +89,60 @@ table tr:first-child th {
   border: none;
 }
 
-#pattern-table img,
-#options-table img {
-  max-height: 8em;
-  max-width: 16em;
+.invisible-table td {
+  border: none;
+  text-align: left;
 }
+
+/* ========== Images styles ========== */
 img {
   transition: all 0.1s ease-in;
 }
+
 img:hover {
   transform: scale(1.03);
 }
 
-/* Reusable styles */
-p.center {
-  text-align: center;
+#products-content img,
+#fabrics-content img {
+  max-height: 8em;
+  max-width: 16em;
 }
 
-b.emphasize {
-  color: #1c1d0c;
-  font-size: 1.2em;
+img.large-animated-image {
+  margin: 1em;
+  max-width: 20em;
+  animation: emph 2s ease-in-out alternate infinite;
 }
 
-.inline-wrap {
+/* ========== Container styles ========== */
+.container--centered,
+.container--centered-row,
+.container--row {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: center;
   gap: 2em;
-  justify-content: center;
-  align-items: top;
-}
-.materials-presentation {
-  max-width: 350px;
-  padding: 1em;
-  border: #aeb784 dashed 1px;
-  border-radius: 6px;
 }
 
-div.centered {
-  display: flex;
+.container--centered {
   flex-direction: column;
+}
+
+.container--centered,
+.container--centered-row {
   align-items: center;
 }
 
-div.centered-list {
-  display: flex;
+.container--row {
+  align-items: flex-start;
+}
+
+.container--row,
+.container--centered-row {
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 1em;
 }
 
-div.inline-list {
+.container--carousel-images {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -107,28 +151,27 @@ div.inline-list {
   overflow-x: scroll;
 }
 
-div.centered-list img {
-  margin: 0;
-  max-width: 6em;
-  max-height: 12em;
+/* ===== Element styles ===== */
+.container--row__cell {
+  max-width: 380px;
+  padding: 1em;
+  border: #aeb784 dashed 1px;
+  border-radius: 6px;
 }
 
-.selected {
-  font-weight: bold;
-  background-color: #aeb784;
-}
-
+/* ========== Hidden hint styles ========== */
+/* explainable class is on element that should show a hint (hidden-hint child) on hover */
 .hidden-hint {
   display: none;
 }
 
-td:has(.hidden-hint):hover {
+.explainable:hover {
   position: relative;
   cursor: help;
   font-weight: bold;
 }
 
-td:hover .hidden-hint {
+.explainable:hover .hidden-hint {
   display: block;
   position: absolute;
   bottom: 2em;
@@ -141,78 +184,67 @@ td:hover .hidden-hint {
   font-weight: normal;
 }
 
-/* Header */
+/* ==================== Animation ==================== */
+
+@keyframes emph {
+  from {
+    transform: rotate(-2deg);
+    scale: 1.02;
+  }
+  to {
+    transform: rotate(2deg);
+    scale: 0.98;
+  }
+}
+
+/* ==================== Header ==================== */
 
 header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   margin-bottom: 1em;
 }
 
-h1 {
-  color: #41431b;
-  text-align: center;
-  font-family: cursive;
-  transition: all 1.5s ease-out;
-  width: 250px;
+/* ==================== Navigation ==================== */
+ul.nav,
+ul.nav--hidden {
+  list-style-type: none;
   padding: 0;
-  margin: 0;
 }
-
-h1:hover {
-  transform: scale(1.3);
-}
-
-/* Navigation */
 
 ul.nav {
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  list-style-type: none;
   margin: 0;
-  padding: 0;
+}
+
+ul.nav--hidden {
+  display: none;
+  position: absolute;
+  margin: -0.75em 0.75em;
 }
 
 ul.nav a {
+  color: black;
+  text-align: center;
+  text-decoration: none;
   display: block;
   width: 100px;
   height: fit-content;
-  text-align: center;
+  /* Specific to not hidden nav */
   margin: 0.4em;
   padding: 0.4em;
   border: #41431b dashed 1px;
   border-radius: 4px;
-  color: black;
-  text-decoration: none;
 }
 
-ul.hidden-nav a {
+ul.nav--hidden a {
   margin: 0;
   padding: 0.5em 0;
-  border: #aeb784 dashed 1px;
   background-color: #f8f3e1;
-}
-
-ul.hidden-nav {
-  position: absolute;
-  margin: -0.75em 0.75em;
-  padding: 0;
-  list-style-type: none;
-  display: none;
-}
-
-.nav li:has(ul.hidden-nav):hover {
-}
-
-.nav li:hover ul.hidden-nav {
-  display: block;
-  transition: display 0.5s ease-in;
-}
-.nav ul.hidden-nav:hover {
-  display: block;
+  border: #aeb784 dashed 1px;
 }
 
 .nav a:hover {
@@ -221,43 +253,31 @@ ul.hidden-nav {
   box-shadow: 2px 2px 2px #aeb784;
 }
 
-/* Footer */
+/* Show hidden nav on hover of parent */
+.nav li:hover ul.nav--hidden {
+  display: block;
+}
+.nav ul.nav--hidden:hover {
+  display: block;
+}
+
+/* ==================== Footer ==================== */
 p.footer {
   text-align: center;
   font-size: 0.6em;
   margin-top: 6em;
 }
 
-/* Home */
+/* ==================== Home ==================== */
 
-#home-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#home-content div {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-
-#home-content img {
-  margin: 1em;
-  max-width: 430px;
-  animation: emph 2s ease-in-out alternate infinite;
-}
-
-#home-content p {
+p.quote {
   position: relative;
   width: max-content;
   aspect-ratio: 1/1;
   font-style: italic;
   font-size: 1.5em;
   padding: 2em 2em;
-  margin: 2em;
+  margin: 0em 2em;
   border: #aeb784 solid 1px;
   border-radius: 6px;
   box-shadow: 1px 1px 1px #aeb784;
@@ -268,7 +288,8 @@ p.footer {
   align-content: center;
 }
 
-#home-content p::after {
+p.quote::after {
+  /* Quote decorative interior border */
   content: "";
   position: absolute;
   width: 90%;
@@ -279,13 +300,13 @@ p.footer {
   border-radius: 6px;
 }
 
-#home-content p:hover {
+p.quote:hover {
   transform: scale(1.05);
 
   box-shadow: 2px 2px 2px #aeb784;
 }
 
-/* About */
+/* ==================== About ==================== */
 
 .person {
   display: flex;
@@ -294,6 +315,9 @@ p.footer {
   padding: 1em;
   border: dashed 2px #aeb784;
   border-radius: 5px;
+  min-height: 350px;
+  max-width: 220px;
+  text-align: center;
 }
 
 .person img:hover {
@@ -306,16 +330,16 @@ p.footer {
   box-shadow: 4px 4px 4px #aeb784;
 }
 
-/* Gallery */
+/* ==================== Gallery ==================== */
 
-#gallery-content img {
+.container--carousel-images img {
   width: 14em;
   max-height: 20em;
   margin-left: 14em;
   margin-right: 14em;
 }
 
-#gallery-content .inline-list {
+.container--carousel-images {
   width: 15em;
   overflow-x: hidden;
 }
@@ -349,12 +373,12 @@ p.footer {
   color: green;
 }
 
-/* Products */
+/* ==================== Contact Form ==================== */
 
-/* Contact Form */
 input,
 textarea,
-select {
+select,
+.button {
   border: #41431b dashed 1px;
   border-radius: 6px;
   padding: 0.5em;
@@ -376,24 +400,38 @@ textarea:valid {
   background-color: rgb(240, 255, 240);
 }
 
-#contact-content td {
-  border: none;
-  text-align: left;
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #e3dbbb;
+  cursor: pointer;
+  text-align: center;
+  padding: 0;
+  transition:
+    box-shadow 0.3s ease-out,
+    transform 0.3s ease-out,
+    background-color 0.3s ease-out;
 }
 
-#contact-content h3 {
-  margin: 0.3em 0em;
+.button--hidden-part {
+  display: none;
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0;
 }
 
-/* Animation */
+.button--visible-part {
+  display: inline;
+}
 
-@keyframes emph {
-  from {
-    transform: rotate(-2deg);
-    scale: 1.02;
-  }
-  to {
-    transform: rotate(2deg);
-    scale: 0.98;
-  }
+.button:hover {
+  text-align: start;
+  background-color: #b6bba1;
+  transform: scale(1.01);
+  box-shadow: 1px 1px 1px #b6bba1;
+}
+
+.button:hover .button--hidden-part {
+  display: inline;
 }

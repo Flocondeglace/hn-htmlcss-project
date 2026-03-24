@@ -11,14 +11,14 @@
         <li><a href="index.html">Home</a></li>
         <li>
           <a href="about.html">About</a>
-          <ul class="hidden-nav">
+          <ul class="nav--hidden">
             <li><a href="staff.html">Staff</a></li>
           </ul>
         </li>
         <li><a href="gallery.html#carousel_1">Photo Gallery</a></li>
         <li>
           <a href="products.html">Products</a>
-          <ul class="hidden-nav">
+          <ul class="nav--hidden">
             <li><a href="fabrics.html">Fabrics</a></li>
           </ul>
         </li>
@@ -26,10 +26,10 @@
       </ul>
     </header>
     <div id="contact-content">
-      <div class="centered">
-        <h2>Contact Us &#128234;</h2>
+      <h2>Contact Us &#128234;</h2>
+      <div class="container--centered-row">
         <form method="post" action="https://hnitest.go.yj.fr">
-          <table>
+          <table class="invisible-table">
             <tr>
               <td>
                 <label>
@@ -39,7 +39,7 @@
                     id="lastname"
                     type="text"
                     name="lastname"
-                    required="true"
+                    required
                     placeholder="Your last name"
                   />
                 </label>
@@ -52,7 +52,7 @@
                     id="firstname"
                     type="text"
                     name="firstname"
-                    required="true"
+                    required
                     placeholder="Your first name"
                   />
                 </label>
@@ -68,7 +68,7 @@
                     type="email"
                     name="mail"
                     placeholder="yourmail@yahoo.com"
-                    required="true"
+                    required
                   />
                 </label>
               </td>
@@ -83,7 +83,7 @@
                     id="request"
                     cols="66"
                     rows="10"
-                    required="true"
+                    required
                     placeholder="Your message : your question, your request for a custom-made book cover, etc."
                   ></textarea>
                 </label>
@@ -97,20 +97,34 @@
                     class="contact-form"
                     name="country"
                     id="country"
-                    required="true"
+                    required
                   >
-                    <option value="France" selected="true">France</option>
-                    <option value="Belgique">Belgique</option>
-                    <option value="Suisse">Suisse</option>
+                    <option value="France" selected>France</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Switzerland">Switzerland</option>
                   </select>
                 </label>
               </td>
             </tr>
             <tr>
               <td>
-                <input type="reset" />
+                <label>
+                  <div class="button">
+                    <p class="button--visible-part">Reset</p>
+                    <p class="button--hidden-part">&#11118;</p>
+                  </div>
+                  <input type="reset" hidden
+                /></label>
               </td>
-              <td><input type="submit" /></td>
+              <td>
+                <label>
+                  <div class="button">
+                    <p class="button--visible-part">Send</p>
+                    <p class="button--hidden-part">&#11162;</p>
+                  </div>
+                  <input type="submit" hidden
+                /></label>
+              </td>
             </tr>
           </table>
         </form>
